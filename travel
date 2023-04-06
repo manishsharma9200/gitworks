@@ -1,0 +1,52 @@
+# Travel App
+
+print("Welcome to our Travel App!")
+print("Where would you like to go?")
+
+destination = input("Enter a destination: ")
+duration = int(input("How many days will you stay? "))
+budget = float(input("What is your budget for the trip? $"))
+
+print("Great! Let's plan your trip to", destination)
+
+# Calculate the daily budget
+daily_budget = budget / duration
+
+# Print the trip details
+print("You will stay in", destination, "for", duration, "days.")
+print("Your budget is $", budget, "so you can spend $", daily_budget, "per day.")
+
+# Ask for user's interests
+print("What are you interested in doing on your trip?")
+interests = input("Enter your interests separated by commas: ")
+
+# Split the interests string into a list
+interests_list = interests.split(",")
+
+# Print the user's interests
+print("Your interests are:", interests_list)
+
+# Generate a list of recommended activities based on the user's interests
+recommended_activities = []
+
+for interest in interests_list:
+    if interest.lower() == "beach":
+        recommended_activities.append("Relax on the beach")
+        recommended_activities.append("Go for a swim")
+        recommended_activities.append("Take a boat tour")
+    elif interest.lower() == "culture":
+        recommended_activities.append("Visit museums")
+        recommended_activities.append("Attend cultural events")
+        recommended_activities.append("Explore historic sites")
+    elif interest.lower() == "adventure":
+        recommended_activities.append("Go hiking")
+        recommended_activities.append("Try zip-lining")
+        recommended_activities.append("Go bungee jumping")
+
+# Print the recommended activities
+if len(recommended_activities) > 0:
+    print("Based on your interests, we recommend the following activities:")
+    for activity in recommended_activities:
+        print("-", activity)
+else:
+    print("Sorry, we couldn't find any activities based on your interests.")
